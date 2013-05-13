@@ -4,6 +4,7 @@ PATH
     quizzy (0.0.1)
       carrierwave
       globalize3
+      mini_magick
       rails (~> 3.2.13)
 
 GEM
