@@ -2,6 +2,8 @@ PATH
   remote: .
   specs:
     quizzy (0.0.1)
+      carrierwave
+      globalize3
       rails (~> 3.2.13)
 
 GEM

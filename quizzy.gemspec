@@ -17,6 +17,8 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2.13"
+  s.add_dependency "carrierwave"
+  s.add_dependency "globalize3"
   
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency "sqlite3"
