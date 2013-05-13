@@ -16,6 +16,7 @@ gem "jquery-rails"
 # To use debugger
 # gem 'debugger'
 
+gem "globalize3"
 
 group :test do
   gem "shoulda-matchers"
