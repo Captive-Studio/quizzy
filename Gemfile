@@ -17,7 +17,13 @@ gem "jquery-rails"
 # gem 'debugger'
 
 gem "globalize3"
+gem 'carrierwave'
+
 
 group :test do
   gem "shoulda-matchers"
+end
+
+group :development, :production do
+  gem 'mini_magick'
 end
