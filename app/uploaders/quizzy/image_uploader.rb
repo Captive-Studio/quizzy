@@ -11,5 +11,10 @@ module Quizzy
       "missing.gif"
     end
 
+    version :quiz_partner do
+      process :resize_to_fill => [200, 220]
+    end
+
+
   end
 end
