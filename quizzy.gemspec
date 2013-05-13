@@ -7,11 +7,11 @@ require "quizzy/version"
 Gem::Specification.new do |s|
   s.name        = "quizzy"
   s.version     = Quizzy::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Quizzy."
-  s.description = "TODO: Description of Quizzy."
+  s.authors     = ["Captive Studio"]
+  s.email       = ["contact@captive.fr"]
+  s.homepage    = "http://www.captive/fr"
+  s.summary     = "Quiz Engine"
+  s.description = "Embed a quiz widget in your Rails app"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
