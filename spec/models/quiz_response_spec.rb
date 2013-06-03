@@ -3,7 +3,6 @@ require 'spec_helper'
 describe QuizResponse do
   attr_reader :quiz, :quiz_response, :question
 
-  it { should validate_presence_of :country }
   it { should validate_presence_of :quiz }
   it { should have_many :responses }
   it { should belong_to :participant }
