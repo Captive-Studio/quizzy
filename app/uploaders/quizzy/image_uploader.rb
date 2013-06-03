@@ -18,6 +18,9 @@ module Quizzy
     version :quiz do
       process :resize_to_fill => [145, 125]
     end
-
+    
+    version :small do
+      process :resize_to_fit => [100, 30]
+    end
   end
 end
