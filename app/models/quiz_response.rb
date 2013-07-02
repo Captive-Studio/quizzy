@@ -12,7 +12,7 @@ class QuizResponse < ActiveRecord::Base
 
   delegate :questions_count, :gifts, to: :quiz
 
-  delegate :firstname, :lastname, :email, :created_at, :entity, to: :participant, prefix: true, allow_nil: true
+  delegate :firstname, :lastname, :email, :created_at, :entity, :position, to: :participant, prefix: true, allow_nil: true
 
   before_save :calculate_score
 
