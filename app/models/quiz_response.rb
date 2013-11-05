@@ -6,7 +6,7 @@ class QuizResponse < ActiveRecord::Base
   attr_accessible :quiz, :quiz_id, :participant_id, :quiz_response, :question, :participant, :country
 
   validates_presence_of :quiz
-  # validates_uniqueness_of :participant_id, scope: :quiz_id
+  validates_uniqueness_of :participant_id, scope: :quiz_id, allow_nil: true 
 
   has_many :responses, dependent: :destroy
 
