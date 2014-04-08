@@ -1,5 +1,5 @@
 class Quiz < ActiveRecord::Base
-  attr_accessible :name, :title, :gifts_attributes, :should_register_participant, :ends_at, :group, :image
+  attr_accessible :name, :title, :gifts_attributes, :should_register_participant, :ends_at, :group, :image, :begin_at
   validates_presence_of :name
 
   has_many :questions
@@ -14,5 +14,9 @@ class Quiz < ActiveRecord::Base
 
   def is_finished?
     Time.now > ends_at
+  end
+
+  def is_begin?
+    Time.now >= begin_at
   end
 end
