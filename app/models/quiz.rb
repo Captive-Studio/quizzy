@@ -19,4 +19,8 @@ class Quiz < ActiveRecord::Base
   def is_begin?
     Time.now >= begin_at
   end
+
+  def quiz_responses_with_reward
+    quiz_responses.select{|quiz_response| !quiz_response.reward.nil? }    
+  end
 end

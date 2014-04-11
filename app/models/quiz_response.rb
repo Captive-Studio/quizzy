@@ -19,7 +19,7 @@ class QuizResponse < ActiveRecord::Base
 
   before_save :calculate_score
 
-  default_scope includes(:participant)
+  default_scope includes([:participant, :reward])
 
   def current_question
     (quiz.questions - responses.collect(&:question)).first
