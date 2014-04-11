@@ -3,12 +3,15 @@ class QuizResponse < ActiveRecord::Base
   belongs_to :participant
   belongs_to :country
 
-  attr_accessible :quiz, :quiz_id, :participant_id, :quiz_response, :question, :participant, :country
+  attr_accessible :quiz, :quiz_id, :participant_id, :quiz_response, :question, :participant, :country, :country_id,  :reward, :reward_attributes
 
   validates_presence_of :quiz
   validates_uniqueness_of :participant_id, scope: :quiz_id, allow_nil: true 
 
   has_many :responses, dependent: :destroy
+
+  has_one :reward
+  accepts_nested_attributes_for :reward, :allow_destroy => true
 
   delegate :questions_count, :gifts, to: :quiz
 
