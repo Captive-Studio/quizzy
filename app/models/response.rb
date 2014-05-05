@@ -10,6 +10,10 @@ class Response < ActiveRecord::Base
     choices == question.good_choices
   end
 
+  def many_good?
+    (question.good_choices & choices).size == choices.size
+  end
+
   def has_made? choice
     choices.include? choice
   end

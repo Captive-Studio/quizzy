@@ -29,6 +29,10 @@ class QuizResponse < ActiveRecord::Base
     self.score = responses.select{|r| r.good?}.count
   end
 
+  def calculate_score_many_good
+    self.score = responses.select{|r| r.many_good?}.count
+  end
+
   def complete?
     !current_question
   end
@@ -44,5 +48,4 @@ class QuizResponse < ActiveRecord::Base
   def earned_gift
     gifts.find{|gift| gift.needed_score == score} if responses.last.good?
   end
-
 end
