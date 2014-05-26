@@ -6,6 +6,7 @@ class Quiz < ActiveRecord::Base
   has_many :gifts
   has_many :quiz_responses
   has_many :participants, through: :quiz_responses
+  has_many :rewards
 
   mount_uploader :image, Quizzy::ImageUploader
   accepts_nested_attributes_for :gifts
@@ -20,7 +21,7 @@ class Quiz < ActiveRecord::Base
     Time.now >= begin_at
   end
 
-  def quiz_responses_with_reward
-    quiz_responses.select{|quiz_response| !quiz_response.reward.nil? }    
+  def has_rewards?
+    rewards.size > 0
   end
 end
