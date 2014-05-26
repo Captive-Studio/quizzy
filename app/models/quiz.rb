@@ -1,5 +1,5 @@
 class Quiz < ActiveRecord::Base
-  attr_accessible :name, :title, :gifts_attributes, :should_register_participant, :ends_at, :group, :image, :begin_at
+  attr_accessible :name, :title, :gifts_attributes, :should_register_participant, :ends_at, :group, :image, :begin_at,  :rewards, :rewards_attributes
   validates_presence_of :name
 
   has_many :questions
@@ -10,6 +10,7 @@ class Quiz < ActiveRecord::Base
 
   mount_uploader :image, Quizzy::ImageUploader
   accepts_nested_attributes_for :gifts
+  accepts_nested_attributes_for :rewards, :allow_destroy => true
 
   delegate :count, to: :questions, prefix: true
 
