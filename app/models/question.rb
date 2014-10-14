@@ -3,7 +3,7 @@ class Question < ActiveRecord::Base
   has_many :choices
   accepts_nested_attributes_for :choices, :allow_destroy => true
 
-  default_scope order('position').includes([:choices, :translations])
+  default_scope { order('position').includes([:choices, :translations]) }
 
   mount_uploader :image, Quizzy::ImageUploader
 

@@ -6,5 +6,5 @@ class Choice < ActiveRecord::Base
   translates :text
   validates :text, presence: true
 
-  default_scope order('position').includes(:translations)
+  default_scope { order('position').includes(:translations) }
 end

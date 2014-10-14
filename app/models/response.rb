@@ -16,6 +16,6 @@ class Response < ActiveRecord::Base
     choices.include? choice
   end
   
-  default_scope includes([:question, :choices])
+  default_scope { includes([:question, :choices]) }
 
 end
