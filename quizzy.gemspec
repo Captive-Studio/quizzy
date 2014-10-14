@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4"
   s.add_dependency "carrierwave"
-  s.add_dependency "globalize3"
+  s.add_dependency "globalize"
   s.add_dependency "mini_magick"
 
   s.add_development_dependency 'rspec-rails'
