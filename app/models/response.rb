@@ -4,8 +4,6 @@ class Response < ActiveRecord::Base
   validates :question, presence: true
   validates_uniqueness_of :question_id, scope: :quiz_response_id
 
-  attr_accessible :question, :choices, :choice_ids, :question_id
-
   def good?
     choices == question.good_choices
   end

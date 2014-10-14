@@ -1,6 +1,4 @@
 class Choice < ActiveRecord::Base
-  attr_accessible :good, :image, :text, :position
-  
   mount_uploader :image, Quizzy::ImageUploader
 
   delegate :url, to: :image, prefix: true

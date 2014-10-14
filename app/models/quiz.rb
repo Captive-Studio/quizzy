@@ -1,5 +1,4 @@
 class Quiz < ActiveRecord::Base
-  attr_accessible :name, :title, :gifts_attributes, :should_register_participant, :ends_at, :group, :image, :begin_at,  :rewards, :rewards_attributes
   validates_presence_of :name
 
   has_many :questions
