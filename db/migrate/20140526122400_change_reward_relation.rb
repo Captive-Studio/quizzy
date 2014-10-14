@@ -1,6 +1,6 @@
 class ChangeRewardRelation < ActiveRecord::Migration
   def up
-    add_column :quizzy_rewards :quiz_id, :integer
+    add_column :quizzy_rewards, :quiz_id, :integer
     add_column :quizzy_rewards, :participant_id, :integer
 
     Quizzy::Reward.all.each do |reward|
