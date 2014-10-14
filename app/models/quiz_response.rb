@@ -1,6 +1,6 @@
 class QuizResponse < ActiveRecord::Base
   belongs_to :quiz
-  belongs_to :participant
+  belongs_to :participant, class_name: Quizzy.user_class
   belongs_to :country
 
   validates_presence_of :quiz
