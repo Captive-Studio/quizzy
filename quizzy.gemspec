@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "Quiz Engine"
   s.description = "Embed a quiz widget in your Rails app"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4"
