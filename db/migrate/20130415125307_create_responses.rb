@@ -1,12 +1,12 @@
 class CreateResponses < ActiveRecord::Migration
   def change
-    create_table :responses do |t|
+    create_table :quizzy_responses do |t|
       t.references :question
       t.references :quiz_response
 
       t.timestamps
     end
-    add_index :responses, :question_id
-    add_index :responses, :quiz_response_id
+    add_index :quizzy_responses, :question_id
+    add_index :quizzy_responses, :quiz_response_id
   end
 end

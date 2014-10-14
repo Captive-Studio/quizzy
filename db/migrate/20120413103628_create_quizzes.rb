@@ -1,6 +1,6 @@
 class CreateQuizzes < ActiveRecord::Migration
   def change
-    create_table :quizzes do |t|
+    create_table :quizzy_quizzes do |t|
       t.string :name
       t.string :group
       t.string :image

@@ -1,5 +1,5 @@
 class AddBeginAtToQuiz < ActiveRecord::Migration
   def change
-    add_column :quizzes, :begin_at, :datetime
+    add_column :quizzy_quizzes, :begin_at, :datetime
   end
 end

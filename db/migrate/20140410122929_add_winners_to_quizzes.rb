@@ -1,5 +1,5 @@
 class AddWinnersToQuizzes < ActiveRecord::Migration
   def change
-    add_column :quizzes, :winners, :text
+    add_column :quizzy_quizzes, :winners, :text
   end
 end

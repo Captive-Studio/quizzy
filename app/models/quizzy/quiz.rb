@@ -2,11 +2,11 @@ module Quizzy
   class Quiz < ActiveRecord::Base
     validates_presence_of :name
 
-    has_many :questions
-    has_many :gifts
-    has_many :quiz_responses
+    has_many :questions, class_name: Quizzy::Response
+    has_many :gifts, class_name: Quizzy::Gift
+    has_many :quiz_responses, class_name: Quizzy::QuizResponse
     has_many :participants, through: :quiz_responses
-    has_many :rewards
+    has_many :rewards, class_name: Quizzy::Reward
 
     mount_uploader :image, Quizzy::ImageUploader
     accepts_nested_attributes_for :gifts
@@ -23,7 +23,7 @@ module Quizzy
     end
 
     def has_rewards?
-      rewards.size > 0
+      quizzy_rewards.size > 0
     end
   end
 end

@@ -1,6 +1,6 @@
 class CreateQuizResponses < ActiveRecord::Migration
   def change
-    create_table :quiz_responses do |t|
+    create_table :quizzy_quiz_responses do |t|
       t.references :quiz
       t.references :country
       t.references :participant
@@ -8,8 +8,8 @@ class CreateQuizResponses < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :quiz_responses, :quiz_id
-    add_index :quiz_responses, :country_id
-    add_index :quiz_responses, :participant_id
+    add_index :quizzy_quiz_responses, :quiz_id
+    add_index :quizzy_quiz_responses, :country_id
+    add_index :quizzy_quiz_responses, :participant_id
   end
 end
