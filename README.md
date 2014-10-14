@@ -4,7 +4,9 @@ Build-in quiz module
 
 Installation:
 
-rake quizzy:install:migrations
+	Add to Gemfile
+	Bundle
+	Run `rake quizzy:install:migrations`
 
 ##Licence
 
