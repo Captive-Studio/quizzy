@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Quizzy::VERSION
   s.authors     = ["Captive Studio"]
   s.email       = ["contact@captive.fr"]
-  s.homepage    = "http://www.captive/fr"
+  s.homepage    = "http://www.captive.fr"
   s.summary     = "Quiz Engine"
   s.description = "Embed a quiz widget in your Rails app"
 
