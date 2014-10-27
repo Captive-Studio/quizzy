@@ -4,6 +4,10 @@ describe Quizzy::Question do
   it { should validate_presence_of :text}
   it { should have_many :choices }
   it { should have_many :translations }
+  it "should have a uid column" do
+    question = Quizzy::Question.new uid: 'question-uid'
+    expect(question.uid).to eq 'question-uid'
+  end
 
   describe "good_choices" do
     it "should return the good choices" do
