@@ -13,7 +13,7 @@ describe Quizzy::Response do
       question = Quizzy::Question.new choices: [choice1, choice2]
       response = Quizzy::Response.new choices: [choice1], question: question
 
-      response.good?.should be false
+      expect(response.good?).to be false
     end
   end
 
