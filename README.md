@@ -11,6 +11,7 @@ Installation:
 	Run `rake quizzy:install:migrations`
 	(it will copy the gem's migration into your app's folder)
 	Run `rake db:migrate`
+  Créate an initializer to set up the user class (eg: Quizzy.user_class = User)
 
 ##Licence
 

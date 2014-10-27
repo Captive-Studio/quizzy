@@ -1,0 +1,1 @@
+Quizzy.user_class = User
