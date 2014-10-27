@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe QuizResponse do
+describe Quizzy::QuizResponse do
   attr_reader :quiz, :quiz_response, :question
 
   it { should validate_presence_of :quiz }
@@ -8,9 +8,9 @@ describe QuizResponse do
   it { should belong_to :participant }
 
   before :each do
-    @quiz = Quiz.new
-    @quiz_response = QuizResponse.new quiz: quiz
-    @question = Question.new
+    @quiz = Quizzy::Quiz.new
+    @quiz_response = Quizzy::QuizResponse.new quiz: quiz
+    @question = Quizzy::Question.new
   end
 
   describe 'current_question' do
@@ -34,7 +34,7 @@ describe QuizResponse do
 
   describe 'score' do
     it "is 0 for a new quiz_response" do
-      QuizResponse.new.score.should eq(0)
+      Quizzy::QuizResponse.new.score.should eq(0)
     end
 
     it "is 1 when with a good response" do
@@ -53,7 +53,7 @@ describe QuizResponse do
     it "is false when quiz is empty" do
       quiz.questions = []
       quiz_response.earned_gift.should be_nil
-      quiz_response.just_earned_gift?.should be_false
+      quiz_response.just_earned_gift?.should be false
     end
 
     it "is true when the needed_score is reached" do
@@ -61,7 +61,7 @@ describe QuizResponse do
       quiz_response.score = 7
 
       quiz_response.earned_gift.should eq(gift)
-      quiz_response.just_earned_gift?.should be_true
+      quiz_response.just_earned_gift?.should be true
     end
 
     it "is false when the needed score is not reached" do
@@ -96,7 +96,7 @@ be_nil
   end
 
   def add_a_gift_at_needed_score needed_score
-    gift = Gift.new needed_score: needed_score
+    gift = Quizzy::Gift.new needed_score: needed_score
     quiz.gifts << gift
     gift
   end
