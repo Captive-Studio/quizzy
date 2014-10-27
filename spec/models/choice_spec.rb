@@ -8,6 +8,6 @@ describe Quizzy::Choice do
 
   it "has an attached image" do 
     choice = Quizzy::Choice.new
-    choice.image_url.should == 'missing.gif'
+    expect(choice.image_url).to eq 'missing.gif'
   end
 end
