@@ -1,6 +1,7 @@
 module Quizzy
 	class Question < ActiveRecord::Base
-	  validates_presence_of :text
+	  validates :text, presence: true
+    validates :uid, presence: true, uniqueness: true
 	  has_many :choices, class_name: Quizzy::Choice
 	  accepts_nested_attributes_for :choices, :allow_destroy => true
 
