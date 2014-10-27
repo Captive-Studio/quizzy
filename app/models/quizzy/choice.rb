@@ -6,6 +6,7 @@ module Quizzy
 
 	  translates :text
 	  validates :text, presence: true
+    validates :uid, presence: true, uniqueness: true
 
 	  default_scope { order('position').includes(:translations) }
 	end
