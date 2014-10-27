@@ -25,10 +25,6 @@ module Quizzy
       self.score = responses.select{|r| r.good?}.count
     end
 
-    def calculate_score_many_good
-      self.score = responses.select{|r| r.many_good?}.count
-    end
-
     def complete?
       !current_question
     end
