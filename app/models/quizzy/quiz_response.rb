@@ -44,5 +44,9 @@ module Quizzy
     def earned_gift
       gifts.find{|gift| gift.needed_score == score} if responses.last.good?
     end
+    
+    def scored_max?
+      score == questions_count
+    end
   end
 end
