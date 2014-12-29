@@ -25,3 +25,7 @@ end
 group :development, :production do
   gem 'mini_magick'
 end
+
+group :development do
+   gem 'guard-rspec', require: false
+end
