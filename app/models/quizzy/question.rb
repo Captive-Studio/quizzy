@@ -5,7 +5,7 @@ module Quizzy
 	  has_many :choices, class_name: Quizzy::Choice
 	  accepts_nested_attributes_for :choices, :allow_destroy => true
 
-	  default_scope { order('position').includes([:choices, :translations]) }
+	  default_scope { order('position') }
 
 	  mount_uploader :image, Quizzy::ImageUploader
 
