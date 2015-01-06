@@ -1,7 +1,5 @@
 module Quizzy
   class Quiz < ActiveRecord::Base
-    validates_presence_of :name
-
     has_many :questions, class_name: Quizzy::Question
     has_many :gifts, class_name: Quizzy::Gift
     has_many :quiz_responses, class_name: Quizzy::QuizResponse
