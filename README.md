@@ -13,15 +13,23 @@ gem "globalize", github: 'globalize/globalize'
 gem 'quizzy', github: 'Captive-Studio/quizzy', branch: 'rails5'
 ```
 
-Run `bundle install`.
+Then run `bundle install`
 
-Run `rake quizzy:install:migrations`
+Next, you need to run the generator:
+
+```console
+$ rake quizzy:install:migrations
+```
 
 (it will copy the gem's migration into your app's folder)
 
-Run `rake db:migrate`
+Then run
 
-Créate an initializer to set up the user class (eg: Quizzy.user_class = User)
+```console
+$ rake db:migrate
+```
+
+Create an initializer to set up the user class (eg: Quizzy.user_class = User)
 
 ## Licence
 
