@@ -27,5 +27,5 @@ group :development, :production do
 end
 
 group :development do
-   gem 'guard-rspec', require: false
+   gem 'guard-rspec', '~> 4.7', require: false
 end

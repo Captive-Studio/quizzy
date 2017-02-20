@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "mini_magick"
 
-  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'rspec-rails', '~> 3.5'
 
   s.test_files = Dir["spec/**/*"]
 end
