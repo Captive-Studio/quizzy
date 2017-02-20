@@ -7,9 +7,9 @@ gemspec
 
 # jquery-rails is used by the dummy application
 gem "jquery-rails"
+gem 'sqlite3'
 
 gem 'carrierwave'
-gem "globalize", github: 'globalize/globalize'
 
 group :test do
   gem "shoulda-matchers"
