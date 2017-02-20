@@ -15,8 +15,6 @@ module Quizzy
 
     before_save :calculate_score
 
-    default_scope { includes([:participant]) }
-
     def current_question
       (quiz.questions - responses.collect(&:question)).first
     end
