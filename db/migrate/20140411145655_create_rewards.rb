@@ -1,4 +1,4 @@
-class CreateRewards < ActiveRecord::Migration
+class CreateRewards < ActiveRecord::Migration[4.2]
   def change
     create_table :quizzy_rewards do |t|
       t.string :name

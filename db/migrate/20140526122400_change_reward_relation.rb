@@ -1,4 +1,4 @@
-class ChangeRewardRelation < ActiveRecord::Migration
+class ChangeRewardRelation < ActiveRecord::Migration[4.2]
   def up
     add_column :quizzy_rewards, :quiz_id, :integer
     add_column :quizzy_rewards, :participant_id, :integer

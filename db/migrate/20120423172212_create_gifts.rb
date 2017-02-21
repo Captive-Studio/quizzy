@@ -1,4 +1,4 @@
-class CreateGifts < ActiveRecord::Migration
+class CreateGifts < ActiveRecord::Migration[4.2]
   def change
     create_table :quizzy_gifts do |t|
       t.integer :quiz_id

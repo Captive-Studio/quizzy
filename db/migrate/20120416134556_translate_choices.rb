@@ -1,4 +1,4 @@
-class TranslateChoices < ActiveRecord::Migration
+class TranslateChoices < ActiveRecord::Migration[4.2]
   def self.up
     Quizzy::Choice.create_translation_table!({
       :text => :string

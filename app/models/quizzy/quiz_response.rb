@@ -1,5 +1,5 @@
 module Quizzy
-  class QuizResponse < ApplicationRecord
+  class QuizResponse < Quizzy::ApplicationRecord
     belongs_to :quiz, class_name: Quizzy::Quiz
     belongs_to :participant, class_name: Quizzy.user_class
     belongs_to :country

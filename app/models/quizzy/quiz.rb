@@ -1,5 +1,5 @@
 module Quizzy
-  class Quiz < ApplicationRecord
+  class Quiz < Quizzy::ApplicationRecord
     validates_presence_of :name
 
     has_many :questions, class_name: Quizzy::Question

@@ -1,4 +1,4 @@
-class CreateQuizResponses < ActiveRecord::Migration
+class CreateQuizResponses < ActiveRecord::Migration[4.2]
   def change
     create_table :quizzy_quiz_responses do |t|
       t.references :quiz

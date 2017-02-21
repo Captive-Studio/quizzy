@@ -1,4 +1,4 @@
-class CreateQuestions < ActiveRecord::Migration
+class CreateQuestions < ActiveRecord::Migration[4.2]
   def change
     create_table :quizzy_questions do |t|
       t.string :text

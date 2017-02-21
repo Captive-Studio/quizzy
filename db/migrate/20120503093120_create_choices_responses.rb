@@ -1,4 +1,4 @@
-class CreateChoicesResponses < ActiveRecord::Migration
+class CreateChoicesResponses < ActiveRecord::Migration[4.2]
   def change
     create_table :quizzy_choices_responses, force: true, id: false do |t|
       t.integer :response_id
