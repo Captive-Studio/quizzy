@@ -1,7 +1,5 @@
-require 'spec_helper'
+require 'rails_helper'
 
-module Quizzy
-  describe Participant do
-    it { should validate_presence_of :email }
-  end
+describe Quizzy::Participant, type: :model do
+  it { should validate_presence_of :email }
 end
