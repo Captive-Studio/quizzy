@@ -2,7 +2,7 @@
 
 Build-in quiz module. 
 
-Ready to use with Rails 4, find the "Rails3" tag for Rails3 or "Rails5" tag for Rails5.
+Ready to use with **Rails 4**, find the "Rails5" branch for **Rails5**.
 
 ## Installation
 
