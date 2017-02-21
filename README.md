@@ -1,18 +1,35 @@
-#Quizzy
+# Quizzy
 
 Build-in quiz module. 
 
-Ready to use with Rails 4, find the "Rails3" tag for Rails3.
+Ready to use with **Rails 4**, find the "Rails5" branch for **Rails5**.
 
-Installation:
+## Installation
 
-	Add to Gemfile
-	Bundle
-	Run `rake quizzy:install:migrations`
-	(it will copy the gem's migration into your app's folder)
-	Run `rake db:migrate`
-  Créate an initializer to set up the user class (eg: Quizzy.user_class = User)
+Add this to your Gemfile:
 
-##Licence
+```ruby
+gem 'quizzy', github: 'Captive-Studio/quizzy'
+```
+
+Then run `bundle install`
+
+Next, you need to run the generator:
+
+```console
+$ rake quizzy:install:migrations
+```
+
+(it will copy the gem's migration into your app's folder)
+
+Then run
+
+```console
+$ rake db:migrate
+```
+
+Create an initializer to set up the user class (eg: Quizzy.user_class = User)
+
+## Licence
 
 MIT
