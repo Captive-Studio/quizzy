@@ -1,7 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Quizzy::Choice do
-  it { should validate_presence_of :text }
+describe Quizzy::Choice, type: :model do
   it { should have_many :translations }
   it { should respond_to :position }
   it { should validate_presence_of :uid }

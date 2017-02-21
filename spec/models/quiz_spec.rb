@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Quizzy::Quiz do
+describe Quizzy::Quiz, type: :model do
   it { should validate_presence_of :name}
   it { should have_many :questions }
   it { should have_many :gifts }

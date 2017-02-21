@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Quizzy::Response do
+describe Quizzy::Response, type: :model do
   it { should belong_to :question}
   it { should validate_presence_of :question}
   it { should have_and_belong_to_many :choices }

@@ -5,7 +5,6 @@ module Quizzy
 	  delegate :url, to: :image, prefix: true
     alias_attribute :title, :text
 	  translates :text
-	  #validates :text, presence: true
     validates :uid, presence: true, uniqueness: true
 
 	  default_scope { order('position') }
