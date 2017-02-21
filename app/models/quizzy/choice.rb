@@ -1,5 +1,5 @@
 module Quizzy
-	class Choice < ActiveRecord::Base
+	class Choice < ApplicationRecord
 	  mount_uploader :image, Quizzy::ImageUploader
 
 	  delegate :url, to: :image, prefix: true

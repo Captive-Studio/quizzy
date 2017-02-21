@@ -1,5 +1,5 @@
 module Quizzy
-	class Reward < ActiveRecord::Base
+	class Reward < ApplicationRecord
 	  mount_uploader :image, Quizzy::ImageUploader
 
 	  belongs_to :participant, class_name: Quizzy.user_class

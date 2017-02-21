@@ -1,5 +1,5 @@
 module Quizzy
-	class Gift < ActiveRecord::Base
+	class Gift < ApplicationRecord
 	  validates_presence_of :attachement, :needed_score
 
 	  mount_uploader :attachement, Quizzy::FileUploader

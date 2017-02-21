@@ -1,5 +1,5 @@
 module Quizzy
-	class Question < ActiveRecord::Base
+	class Question < ApplicationRecord
 	  validates :text, presence: true
     validates :uid, presence: true, uniqueness: true
 	  has_many :choices, class_name: Quizzy::Choice

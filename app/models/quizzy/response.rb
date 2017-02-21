@@ -1,5 +1,5 @@
 module Quizzy
-  class Response < ActiveRecord::Base
+  class Response < ApplicationRecord
     belongs_to :question, class_name: Quizzy::Question
     has_and_belongs_to_many :choices, class_name: 'Quizzy::Choice'
     validates :question, presence: true
