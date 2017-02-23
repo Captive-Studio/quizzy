@@ -17,7 +17,7 @@ Then run `bundle install`
 Next, you need to run the generator:
 
 ```console
-$ rake quizzy:install:migrations
+$ rails quizzy:install:migrations
 ```
 
 (it will copy the gem's migration into your app's folder)
@@ -25,7 +25,7 @@ $ rake quizzy:install:migrations
 Then run
 
 ```console
-$ rake db:migrate
+$ rails db:migrate
 ```
 
 Create an initializer to set up the user class (eg: Quizzy.user_class = User)
