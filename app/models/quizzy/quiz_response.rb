@@ -24,6 +24,10 @@ module Quizzy
       resultat.nil? ? self.uid = random_string : set_uid
     end
 
+    def to_param
+      uid
+    end
+
     def current_question
       (quiz.questions - responses.collect(&:question)).first
     end
