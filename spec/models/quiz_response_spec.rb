@@ -13,6 +13,28 @@ describe Quizzy::QuizResponse, type: :model do
     @question = Quizzy::Question.new
   end
 
+  describe 'defini un uid' do
+    it 'avec une string aléatoire' do
+      quiz_response = Quizzy::QuizResponse.new
+      allow(SecureRandom).to receive(:hex).and_return 'dzdk344'
+      resultat = quiz_response.set_uid
+      expect(quiz_response.uid).to eq 'dzdk344'
+    end
+
+    it 'avec une string aléatoire pas utilisée' do
+      quiz_response = Quizzy::QuizResponse.new
+      quiz_response2 = Quizzy::QuizResponse.new
+
+      allow(SecureRandom).to receive(:hex).and_return 'dzdk344', 'toto'
+      allow(Quizzy::QuizResponse).to receive(:find_by).and_return quiz_response2, nil
+
+      resultat = quiz_response.set_uid
+
+      expect(quiz_response.uid).not_to eq 'dzdk344'
+      expect(quiz_response.uid).to eq 'toto'
+    end
+  end
+
   describe 'current_question' do
 
     it "is nil when quiz has no question" do
@@ -49,12 +71,12 @@ describe Quizzy::QuizResponse, type: :model do
     before :each do
       allow(quiz).to receive(:questions_count).and_return 7
     end
-    
+
     it 'should be true when score is equal to question_count' do
       quiz_response.score = 7
       expect(quiz_response.scored_max?).to be true
     end
-    
+
     it 'should be false when score is different from question_count' do
       quiz_response.score = 2
       expect(quiz_response.scored_max?).to be false

@@ -5,7 +5,7 @@ module Quizzy
     belongs_to :country
 
     validates_presence_of :quiz
-    validates_uniqueness_of :participant_id, scope: :quiz_id, allow_nil: true 
+    validates_uniqueness_of :participant_id, scope: :quiz_id, allow_nil: true
 
     has_many :responses, dependent: :destroy, class_name: Quizzy::Response
 
@@ -14,6 +14,15 @@ module Quizzy
     delegate :firstname, :lastname, :email, :created_at, :entity, :position, to: :participant, prefix: true, allow_nil: true
 
     before_save :calculate_score
+
+    after_initialize :set_uid, if: :new_record?
+
+    def set_uid
+      random_string = SecureRandom.hex
+      resultat = Quizzy::QuizResponse.find_by uid: random_string
+
+      resultat.nil? ? self.uid = random_string : set_uid
+    end
 
     def current_question
       (quiz.questions - responses.collect(&:question)).first
@@ -38,7 +47,7 @@ module Quizzy
     def earned_gift
       gifts.find{|gift| gift.needed_score == score} if responses.last.good?
     end
-    
+
     def scored_max?
       score == questions_count
     end
