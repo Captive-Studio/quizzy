@@ -3,7 +3,7 @@ PATH
   specs:
     quizzy (0.0.1)
       carrierwave
-      globalize-r5
+      globalize-rails5
       mini_magick
       rails (>= 5.0.0)
 
@@ -61,7 +61,7 @@ GEM
     formatador (0.2.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    globalize-r5 (5.1.0)
+    globalize-rails5 (5.1.0)
       activemodel (>= 4.2, < 5.1)
       activerecord (>= 4.2, < 5.1)
       request_store (~> 1.0)
