@@ -9,7 +9,9 @@ Ready to use with **Rails 4**, find the "Rails5" branch for **Rails5**.
 Add this to your Gemfile:
 
 ```ruby
-gem 'quizzy', github: 'Captive-Studio/quizzy', branch: 'rails5'
+gem 'quizzy', git: 'https://github.com/Captive-Studio/quizzy.git', branch: 'rails5'
+gem 'globalize', git: 'https://github.com/globalize/globalize'
+gem 'activemodel-serializers-xml'
 ```
 
 Then run `bundle install`
