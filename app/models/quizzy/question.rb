@@ -2,7 +2,7 @@ module Quizzy
 	class Question < Quizzy::ApplicationRecord
 	  validates :text, presence: true
     validates :uid, presence: true, uniqueness: true
-	  has_many :choices, class_name: Quizzy::Choice
+	  has_many :choices, class_name: 'Quizzy::Choice'
 	  accepts_nested_attributes_for :choices, :allow_destroy => true
 
 	  default_scope { order('position') }

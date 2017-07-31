@@ -2,11 +2,11 @@ module Quizzy
   class Quiz < Quizzy::ApplicationRecord
     validates_presence_of :name
 
-    has_many :questions, class_name: Quizzy::Question
-    has_many :gifts, class_name: Quizzy::Gift
-    has_many :quiz_responses, class_name: Quizzy::QuizResponse
+    has_many :questions, class_name: 'Quizzy::Question'
+    has_many :gifts, class_name: 'Quizzy::Gift'
+    has_many :quiz_responses, class_name: 'Quizzy::QuizResponse'
     has_many :participants, through: :quiz_responses
-    has_many :rewards, class_name: Quizzy::Reward
+    has_many :rewards, class_name: 'Quizzy::Reward'
 
     mount_uploader :image, Quizzy::ImageUploader
     accepts_nested_attributes_for :gifts
