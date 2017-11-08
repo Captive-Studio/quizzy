@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", ">= 5.0.0"
   s.add_dependency "carrierwave"
-  s.add_development_dependency "globalize"
+  s.add_development_dependency "globalize", '5.1.0.beta2'
 
   s.add_dependency "mini_magick"
 

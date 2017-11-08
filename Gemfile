@@ -1,8 +1,5 @@
 source "http://rubygems.org"
 
-# Declare your gem's dependencies in quizzy.gemspec.
-# Bundler will treat runtime dependencies like base dependencies, and
-# development dependencies will be added by default to the :development group.
 gemspec
 
 # jquery-rails is used by the dummy application
@@ -20,5 +17,5 @@ group :development, :production do
 end
 
 group :development do
-   gem 'guard-rspec', '~> 4.7', require: false
+  gem 'guard-rspec', '~> 4.7', require: false
 end
