@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Quizzy::Quiz, type: :model do
   it { should validate_presence_of :name}
-  it { should have_many :questions }
+  it { should have_many :sections }
   it { should have_many :gifts }
 
   it 'is_finished? returns true if quiz is not valid longer' do

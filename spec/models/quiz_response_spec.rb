@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Quizzy::QuizResponse, type: :model do
-  attr_reader :quiz, :quiz_response, :question
+  attr_reader :quiz, :section, :quiz_response, :question
 
   it { should validate_presence_of :quiz }
   it { should have_many :responses }
@@ -9,8 +9,9 @@ describe Quizzy::QuizResponse, type: :model do
 
   before :each do
     @quiz = Quizzy::Quiz.new
+    @section = Quizzy::Section.new quiz_id: quiz.id
     @quiz_response = Quizzy::QuizResponse.new quiz: quiz
-    @question = Quizzy::Question.new
+    @question = Quizzy::Question.new 
   end
 
   describe 'defini un uid' do
@@ -38,17 +39,17 @@ describe Quizzy::QuizResponse, type: :model do
   describe 'current_question' do
 
     it "is nil when quiz has no question" do
-      quiz.questions = []
+      quiz.sections = []
       expect(quiz_response.current_question).to be_nil
     end
 
     it "is the first question of the quiz" do
-      quiz.questions = [question]
+      allow(quiz).to receive(:questions).and_return [question]
       expect(quiz_response.current_question).to eq(question)
     end
 
     it "is nil when all questions has been answered" do
-      quiz.questions = [question]
+      allow(quiz).to receive(:questions).and_return [question]
       quiz_response.responses.build question: question
       expect(quiz_response.current_question).to be_nil
     end
