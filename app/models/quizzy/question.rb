@@ -4,7 +4,7 @@ module Quizzy
     validates :text, presence: true
     validates :uid, presence: true, uniqueness: true
     has_many :choices, class_name: 'Quizzy::Choice'
-    accepts_nested_attributes_for :choices, :allow_destroy => true
+    accepts_nested_attributes_for :choices, allow_destroy: true
 
     default_scope { order('position') }
 
@@ -14,6 +14,23 @@ module Quizzy
 
     def good_choices
       choices.select(&:good)
+    end
+
+    def next_question
+      question = Quizzy::Question.find_by(position: position + 1, section: section)
+      return question if question.present?
+      first_question_of_next_section
+    end
+
+    def first_question_of_next_section
+      Quizzy::Question.includes(:section)
+                      .where(
+                        sections: {
+                          quiz_id: section.quiz_id,
+                          position: section.position + 1
+                        },
+                        position: 1
+                      ).first
     end
   end
 end
