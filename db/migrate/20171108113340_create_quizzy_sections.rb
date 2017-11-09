@@ -4,6 +4,7 @@ class CreateQuizzySections < ActiveRecord::Migration[5.0]
       t.string :name
       t.references :quiz, index: true, foreign_key: { to_table: :quizzy_quizzes }
       t.text :intro
+      t.integer :position
 
       t.timestamps
     end
