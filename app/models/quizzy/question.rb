@@ -6,7 +6,7 @@ module Quizzy
     has_many :choices, class_name: 'Quizzy::Choice'
     accepts_nested_attributes_for :choices, allow_destroy: true
 
-    default_scope { order('position') }
+    default_scope { order(:position) }
 
     mount_uploader :image, Quizzy::ImageUploader
 
@@ -25,7 +25,7 @@ module Quizzy
     def first_question_of_next_section
       Quizzy::Question.includes(:section)
                       .where(
-                        sections: {
+                        quizzy_sections: {
                           quiz_id: section.quiz_id,
                           position: section.position + 1
                         },
