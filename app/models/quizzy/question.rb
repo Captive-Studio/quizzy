@@ -8,6 +8,8 @@ module Quizzy
 
     default_scope { order(:position) }
 
+    attribute :text
+
     mount_uploader :image, Quizzy::ImageUploader
 
     translates :text
