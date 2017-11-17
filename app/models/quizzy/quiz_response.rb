@@ -29,7 +29,15 @@ module Quizzy
     end
 
     def current_question
-      (quiz.questions - responses.collect(&:question)).first
+      (list_question - responses.collect(&:question)).first
+    end
+
+    def list_question_by_section
+      quiz.questions.group_by(&:section_id)
+    end
+
+    def list_question
+      list_question_by_section.values.flatten
     end
 
     def calculate_score
