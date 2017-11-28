@@ -7,6 +7,7 @@ module Quizzy
     accepts_nested_attributes_for :choices, allow_destroy: true
 
     default_scope { order(:position) }
+    scope :for_quiz, ->(quiz) { includes(:section).where(quizzy_sections: { quiz_id: quiz }) }
 
     attribute :text
 
